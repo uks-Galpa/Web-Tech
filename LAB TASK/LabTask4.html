@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Login</title>
+    <script>
+       function handleSubmit() {
+            const NameValue = document.getElementById("name").value;
+            const emailValue = document.getElementById("email")?.value; 
+            const passwordValue = document.getElementById("password").value;
+
+            if (!NameValue || NameValue == "") {
+                const ErrorElement = document.getElementById("nameErr");
+                ErrorElement.innerHTML = "Name is required";
+            } else {
+                const ErrorElement = document.getElementById("nameErr");
+                ErrorElement.innerHTML = "";
+            }
+
+            if (!emailValue || emailValue == "") {
+                const ErrorElement = document.getElementById("emailErr");
+                if (ErrorElement) ErrorElement.innerHTML = "Email is required";
+            } else {
+                const ErrorElement = document.getElementById("emailErr");
+                if (ErrorElement) ErrorElement.innerHTML = "";
+            }
+
+            if (!passwordValue || passwordValue == "") {
+                const ErrorElement = document.getElementById("passwordErr");
+                ErrorElement.innerHTML = "Password is required";
+            } else {
+                const ErrorElement = document.getElementById("passwordErr");
+                ErrorElement.innerHTML = "";
+            }
+        }
+    </script>
+
+    <style>
+        .container {
+            width: 800px;
+            margin: auto;
+            background-color: rgb(186, 226, 232);
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            margin-left: 15px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .login-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 750px;
+        }
+
+        table td {
+            padding: 10px 0;
+        }
+
+        .error {
+            color: red;
+            padding-left: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="header">
+            <h1>Company</h1>
+
+            <nav>
+                <a href="Home" style="color: blueviolet;">Home</a>
+                <a href="Login" style="color: blueviolet;">Login</a>
+                <a href="Registration" style="color: blueviolet;">Registration</a>
+            </nav>
+        </div>
+
+        <div class="login-box">
+            <h2>Login</h2>
+
+            <table>
+                <tr>
+                    <td><label>User Name:</label></td>
+                    <td>
+                        <input type="text" placeholder="Enter username" id="name">
+                        <span id="nameErr" class="error"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label>Password:</label></td>
+                    <td>
+                        <input type="password" placeholder="Enter password" id="password">
+                        <span id="passwordErr" class="error"></span>
+                    </td>
+                </tr>
+            </table>
+
+            <input type="checkbox"> Remember me <br><br>
+
+            <button onclick="handleSubmit()">Submit</button>
+            <br><br>
+
+            <a href="Forget Password?">Forget Password?</a>
+
+        </div>
+
+
+        <div></div>
+
+    </div>
+</body>
+</html>
