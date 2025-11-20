@@ -1,164 +1,193 @@
-<html>
+import React from "react";
 
-<head>
-    <style>
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            background-color: lightgrey;
-        }
+// PortfolioApp.jsx
+// Single-file React component for a personal AI/UX/Developer portfolio.
+// Uses Tailwind utility classes. Assumes Tailwind + shadcn/ui + lucide-react available in the host project.
 
-        body {
-            margin-left: 20%;
-            margin-right: 20%;
-        }
+export default function PortfolioApp() {
+  return (
+    <div className="min-h-screen bg-slate-50 text-slate-900 antialiased">
+      {/* Header / Hero */}
+      <header className="bg-white shadow-sm sticky top-0 z-30">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-300 to-orange-400 flex items-center justify-center font-bold text-white text-lg">UG</div>
+            <div>
+              <h1 className="text-lg font-semibold">Uks Galpa</h1>
+              <p className="text-sm text-slate-500">3rd-year CSE • Aspiring UI/UX Designer • ML enthusiast</p>
+            </div>
+          </div>
+          <nav className="hidden md:flex items-center gap-6 text-sm">
+            <a href="#about" className="hover:underline">About</a>
+            <a href="#projects" className="hover:underline">Projects</a>
+            <a href="#skills" className="hover:underline">Skills</a>
+            <a href="#blog" className="hover:underline">Blog</a>
+            <a href="#contact" className="text-white bg-orange-500 px-4 py-2 rounded-2xl shadow">Contact</a>
+          </nav>
+        </div>
+      </header>
 
-        table {
-            margin-left: auto;
-            margin-right: auto;
+      <main className="max-w-6xl mx-auto px-6 py-16">
+        {/* Hero */}
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          <div>
+            <p className="text-sm text-amber-600 font-medium">Hi — I'm Uks</p>
+            <h2 className="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight">CSE Student at AIUB, building human-centered interfaces powered by AI.</h2>
+            <p className="mt-6 text-lg text-slate-700 leading-relaxed">
+              I’m a 3rd-year Computer Science student from AIUB (American International University-Bangladesh) shifting focus to UI/UX design. I blend programming (C++, C#, OpenGL), database work, and beginner machine learning ideas with clean, practical design. I build portfolio projects, freelancing app screens, and experiment with AI-driven interactions.
+            </p>
+            <div className="mt-6 flex gap-3">
+              <a href="#projects" className="inline-block px-6 py-3 bg-orange-500 text-white rounded-2xl shadow">See projects</a>
+              <a href="#contact" className="inline-block px-6 py-3 border rounded-2xl">Contact me</a>
+            </div>
+          </div>
 
-        }
+          <div className="bg-white rounded-2xl p-6 shadow">
+            {/* Quick facts / CTA card */}
+            <h3 className="text-xl font-semibold">Quick facts</h3>
+            <ul className="mt-4 space-y-3 text-slate-700">
+              <li>• 3rd-year BSc CSE student — AIUB</li>
+              <li>• Skills: C++, C#, OpenGL, SQL Server, basic ML</li>
+              <li>• Interests: UI/UX, product design, freelancing platforms</li>
+              <li>• Working part-time to grow communication & real-world experience</li>
+            </ul>
+            <div className="mt-6">
+              <p className="text-sm text-slate-500">Future plan:</p>
+              <p className="font-medium">Preparing for a fully-funded master's program in Canada</p>
+            </div>
+          </div>
+        </section>
 
-        .center-text {
-            text-align: center;
-        }
+        {/* About */}
+        <section id="about" className="mt-16 bg-white p-8 rounded-2xl shadow">
+          <h3 className="text-2xl font-semibold">About Me</h3>
+          <p className="mt-4 text-slate-700 leading-relaxed">
+            I’m building a bridge between software engineering and user-centered design. My projects range from C# assignment managers and OpenGL logo rendering to conceptual AI features for a freelancing app. I enjoy practical problem solving — whether it’s debugging a database flow or designing a clean user onboarding experience.
+          </p>
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+            <article className="p-4 border rounded-lg">
+              <h4 className="font-semibold">Education</h4>
+              <p className="text-sm text-slate-600">BSc CSE — American International University-Bangladesh</p>
+            </article>
+            <article className="p-4 border rounded-lg">
+              <h4 className="font-semibold">Work</h4>
+              <p className="text-sm text-slate-600">Part-time roles to build communication & teamwork skills</p>
+            </article>
+            <article className="p-4 border rounded-lg">
+              <h4 className="font-semibold">Why UX?</h4>
+              <p className="text-sm text-slate-600">I love turning complex logic into simple, useful interactions that people enjoy using.</p>
+            </article>
+          </div>
+        </section>
 
-        .right-alignment {
-            text-align: right;
-            font-weight: bold;
-        }
+        {/* Projects */}
+        <section id="projects" className="mt-12">
+          <h3 className="text-2xl font-semibold">Selected Projects</h3>
+          <p className="text-sm text-slate-600 mt-2">A mix of engineering and design — brief descriptions included.</p>
 
-        #header1 {
-            font-size: small;
-        }
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white p-6 rounded-2xl shadow">
+              <h4 className="font-semibold">C# Assignment Manager (UserControl)</h4>
+              <p className="mt-2 text-slate-700">A Windows Forms UserControl to create, manage, and grade assignments with SQL Server storage and polished UI.</p>
+              <p className="mt-3 text-sm text-slate-500">Tech: C#, WinForms, SQL Server</p>
+              <div className="mt-4 flex gap-3">
+                <a className="text-sm underline">View code</a>
+                <a className="text-sm underline">Live demo (video)</a>
+              </div>
+            </div>
 
-        #header2 {
-            font-weight: bold;
-        }
+            <div className="bg-white p-6 rounded-2xl shadow">
+              <h4 className="font-semibold">OpenGL Logo & Graphics</h4>
+              <p className="mt-2 text-slate-700">Logos and visuals rendered with OpenGL for use in UI headers and brand elements.</p>
+              <p className="mt-3 text-sm text-slate-500">Tech: C++, OpenGL, GLSL</p>
+            </div>
 
-        .sm {
-            font-size: 10px;
-        }
+            <div className="bg-white p-6 rounded-2xl shadow">
+              <h4 className="font-semibold">Freelancing App UI (Fiverr/Upwork inspired)</h4>
+              <p className="mt-2 text-slate-700">Designs for proposal-writing flows, order lists, and AI-powered freelancer tools that suggest proposals and screen spam.</p>
+              <p className="mt-3 text-sm text-slate-500">Tools: Figma, Prototype, AI prompt flows</p>
+            </div>
 
-        .amount-container {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            gap: 8px;
-        }
+            <div className="bg-white p-6 rounded-2xl shadow">
+              <h4 className="font-semibold">Transportation Safety Concept for AIUB</h4>
+              <p className="mt-2 text-slate-700">A software-based system considering recent safety incidents in Dhaka to improve student transport safety and route alerts.</p>
+              <p className="mt-3 text-sm text-slate-500">Focus: UX for emergency alerts, route analytics, and driver verification</p>
+            </div>
+          </div>
+        </section>
 
-        .amount-container label {
-            margin: 0;
-            white-space: nowrap;
-        }
+        {/* Skills */}
+        <section id="skills" className="mt-12 bg-white p-8 rounded-2xl shadow">
+          <h3 className="text-2xl font-semibold">Skills</h3>
+          <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div>
+              <h4 className="font-semibold">Programming</h4>
+              <ul className="mt-2 text-slate-700">
+                <li>• C++, C#</li>
+                <li>• OpenGL / GLSL</li>
+                <li>• SQL Server / Databases</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold">Design / UX</h4>
+              <ul className="mt-2 text-slate-700">
+                <li>• UI/UX fundamentals</li>
+                <li>• Figma, prototyping, usability testing</li>
+                <li>• Visual design & branding</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold">AI & ML</h4>
+              <ul className="mt-2 text-slate-700">
+                <li>• Basic ML concepts</li>
+                <li>• AI-assisted UX ideas (content generation, onboarding)</li>
+                <li>• Projects: idea-stage / prototypes</li>
+              </ul>
+            </div>
+          </div>
+        </section>
 
-        .amount-container input {
-            width: 100px;
-        }
-    </style>
+        {/* Blog / Insights */}
+        <section id="blog" className="mt-12">
+          <h3 className="text-2xl font-semibold">Blog / Thoughts</h3>
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <article className="bg-white p-6 rounded-2xl shadow">
+              <h4 className="font-semibold">How AI Can Help Students Learn</h4>
+              <p className="mt-2 text-sm text-slate-600">Short essay: combining chatbots for study help, automated feedback, and ethical considerations.</p>
+            </article>
+            <article className="bg-white p-6 rounded-2xl shadow">
+              <h4 className="font-semibold">Designing Freelance Proposal Flows</h4>
+              <p className="mt-2 text-sm text-slate-600">Case study: features that reduce spam and help freelancers write winning proposals quickly.</p>
+            </article>
+            <article className="bg-white p-6 rounded-2xl shadow">
+              <h4 className="font-semibold">From Coder to Designer</h4>
+              <p className="mt-2 text-sm text-slate-600">Personal notes on shifting from backend logic to user-facing design.</p>
+            </article>
+          </div>
+        </section>
 
-    <script>
-        console.log("Hello world from js console");
-        var abc = "Education";
-        console.log("The value of abc is ..", abc);
-        var abc;
-        console.log("The value of abc is still..", abc);
+        {/* Contact */}
+        <section id="contact" className="mt-12 bg-white p-8 rounded-2xl shadow">
+          <h3 className="text-2xl font-semibold">Contact</h3>
+          <p className="text-sm text-slate-600 mt-2">Want to collaborate? Hire me? Talk about design or research? Reach out:</p>
+          <form className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input className="p-3 border rounded-lg" placeholder="Your name" />
+            <input className="p-3 border rounded-lg" placeholder="Your email" />
+            <input className="p-3 border rounded-lg md:col-span-2" placeholder="Subject" />
+            <textarea className="p-3 border rounded-lg md:col-span-2" rows={4} placeholder="Message"></textarea>
+            <button className="md:col-span-2 px-6 py-3 bg-amber-500 rounded-2xl text-white">Send message</button>
+          </form>
 
-        var first_name = "";
-        function validateForm() {
-            first_name = document.getElementById("first_name").value;
-            console.log("first name is...", first_name);
-            var line = "Hello " + first_name;
-            alert(line);
-        }
+          <div className="mt-6 text-sm text-slate-600">
+            <p>Socials: LinkedIn • GitHub • Behance • Figma</p>
+          </div>
+        </section>
 
-    </script>
-</head>
-
-<body>
-    <div class="container">
-        <p id="header1"><span style="color:red">*</span> -Denotes Required Information</p>
-        <p> <span id="header2">> 1 Donation</span> <span> > 2 Confirmation</span> <span> > 3 Thank You</span></s></p>
-        <form action="" onsubmit="validateForm()" method="get">
-            <table>
-                <tr>
-                    <td class="right-alignment">First Name <span style="color:red">*</span></td>
-                    <td><input type="text" placeholder="Enter Your name" id="first_name" /></td>
-                </tr>
-                <tr>
-                    <td class="right-alignment" name="last_name">Last Name <span style="color:red">*</span></td>
-                    <td><input type="" placeholder="Enter Your name" /></td>
-                </tr>
-                <tr>
-                    <td class="right-alignment">Company <span style="color:red">*</span></td>
-                    <td><input type="" placeholder="Enter Company Name" /></td>
-                </tr>
-                <tr>
-                    <td class="right-alignment">Address 1 <span style="color:red">*</span></td>
-                    <td><input type="" placeholder="Enter Company Name" /></td>
-                </tr>
-                <tr>
-                    <td class="right-alignment">Address 2</td>
-                    <td><input type="" placeholder="Enter Company Name" /></td>
-                </tr>
-                <tr>
-                    <td class="right-alignment">City <span style="color:red">*</span></td>
-                    <td><input type="" placeholder="Enter Company Name" /></td>
-                </tr>
-                <tr>
-                    <td class="right-alignment">Gender</td>
-                    <td>
-                        <select>
-                            <option disabled selected>Select Your Gender</option>
-                            <option>Male</option>
-                            <option>Female</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="right-alignment">Gender</td>
-                    <td>
-                        <input type="radio" name="gender" value="Male" />Male
-                        <input type="radio" name="gender" value="female" />Female
-                    </td>
-                </tr>
-                <tr>
-                    <td class="right-alignment">Completed Courses</td>
-                    <td>
-                        <input type="checkbox" /> IP
-                    </td>
-                </tr>
-                <tr>
-                    <td class="right-alignment"></td>
-                    <td>
-                        <input type="checkbox" /> OOP1
-                    </td>
-                </tr>
-                <tr>
-                    <td class="sm">
-                        (Check a buttom or type in your amount)
-                    </td>
-                    <td>
-                        <div class="amount-container">
-                            <label class="right-alignment">Other Amount $</label>
-                            <input type="text" />
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <button type="submit">Submit</button>
-                    </td>
-                </tr>
-
-            </table>
-        </form>
+        {/* Footer */}
+        <footer className="mt-16 py-8 text-center text-sm text-slate-500">
+          © {new Date().getFullYear()} Uks Galpa — Built with curiosity and coffee.
+        </footer>
+      </main>
     </div>
-
-</body>
-
-</html>
+  );
+}
